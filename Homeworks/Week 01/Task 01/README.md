@@ -1,6 +1,4 @@
-# Task 1. Съквартиранти (Easy)
-
-[HackerRank link](<https://www.hackerrank.com/contests/sda-hw-1-2022/challenges/1-410>)
+# Task 1. Съквартиранти (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2022/challenges/1-410>)
 
 ## Statement:
 

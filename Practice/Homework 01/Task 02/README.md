@@ -1,0 +1,1 @@
+## 2. Футболен отбор (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1/challenges/challenge-3065>), [Task statement](<https://github.com/David-Petrov/sda2021-22/tree/main/Homework_01/Футболен%20отбор/README.md>)

@@ -1,6 +1,4 @@
-# Task 3. Missing Bus Ticket (Hard)
-
-[HackerRank link](<https://www.hackerrank.com/contests/sda-hw-1-2022/challenges/missing-bus-ticket>)
+# Task 3. Missing Bus Ticket (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2022/challenges/missing-bus-ticket>)
 
 ## Statement:
 
