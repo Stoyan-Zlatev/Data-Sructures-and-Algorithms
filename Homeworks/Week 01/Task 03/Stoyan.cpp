@@ -25,7 +25,6 @@ int main() {
     std::sort(ticketNumbers.begin(), ticketNumbers.end());
     //Remove duplicate ticket numbers
     std::unique(ticketNumbers.begin(), ticketNumbers.end());
-    bool isLast = true;
     for (size_t i = 0; i < ticketNumbers.size() - 1; ++i) {
         if (ticketNumbers[i] + 1 != ticketNumbers[i + 1]) {
             cout << ticketNumbers[i] + 1;
