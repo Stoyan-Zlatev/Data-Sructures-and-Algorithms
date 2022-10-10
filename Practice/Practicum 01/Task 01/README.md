@@ -1,4 +1,4 @@
-# Task 1. Encoding Password (Easy) - [HackerRank]([<https://www.hackerrank.com/contests/sda-hw-1-2022/challenges/1-410>](https://www.hackerrank.com/contests/practice-1-sda/challenges/encoding-password))
+# Task 1. Encoding Password (Easy) - [HackerRank](<https://www.hackerrank.com/contests/practice-1-sda/challenges/encoding-password>)
 
 ## Statement:
 Преподавателският състав на курса по СДА има специален админски канал в Slack. Каналът е затворен и за да се присъединиш към него, трябва когато ти бъде подадена парола, да върнеш нейния шифриран вариант. Паролите съдържат само главни букви от английската азбука.
