@@ -1,4 +1,4 @@
-# Task 4. Cloning socks (Medium) - [HackerRank](<https://www.hackerrank.com/contests/practice-1-sda/challenges/challenge-2196>)
+# Task 3. Водни запаси (Easy) - [HackerRank](<https://www.hackerrank.com/contests/practice-1-sda/challenges/challenge-2196>)
 
 ## Statement:
 
