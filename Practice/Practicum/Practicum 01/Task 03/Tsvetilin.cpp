@@ -8,13 +8,15 @@ size_t max[MAX_SIZE]{};
 int main()
 {
     size_t n;
-
     std::cin >> n;
+
+    size_t maxVol;
 
     for (size_t i = 0; i < n; i++)
     {
         std::cin >> walls[i];
-        size_t maxVol = 0;
+        maxVol = 0;
+        
         for (size_t j = 0; j < i; j++)
         {
             size_t vol = std::min(walls[j], walls[i]) * (i - j);
@@ -36,5 +38,5 @@ int main()
         }
     }
 
-    std::cout<<maxVol;
+    std::cout << maxVol;
 }
