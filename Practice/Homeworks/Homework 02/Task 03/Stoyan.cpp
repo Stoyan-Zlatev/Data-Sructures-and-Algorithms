@@ -6,20 +6,6 @@
 
 using namespace std;
 
-size_t convertToNumber(char el) {
-    if (isdigit(el)) {
-        return el - '0' + 1;
-    } else if (islower(el)) {
-        return el - 'a' + 11;
-    }
-    return el - 'A' + 37;
-}
-
-bool isBigger(char x, char y) {
-    return convertToNumber(x) < convertToNumber(y);
-}
-
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
