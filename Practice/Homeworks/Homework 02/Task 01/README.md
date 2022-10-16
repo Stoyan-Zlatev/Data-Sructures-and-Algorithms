@@ -1,0 +1,1 @@
+## 1. Евтини подаръци (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2/challenges/challenge-3091>), [Task statement](<https://github.com/David-Petrov/sda2021-22/blob/main/Homework_02/%D0%95%D0%B2%D1%82%D0%B8%D0%BD%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%80%D1%8A%D1%86%D0%B8/README.md>)
