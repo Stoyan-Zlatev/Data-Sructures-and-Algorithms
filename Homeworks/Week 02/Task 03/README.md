@@ -1,4 +1,4 @@
-# Task 2. Netflix (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2022/challenges/netflix-1-1>)
+# Task 3. Netflix (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2022/challenges/netflix-1-1>)
 
 ## Statement:
 

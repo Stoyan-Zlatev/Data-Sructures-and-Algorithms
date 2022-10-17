@@ -5,7 +5,8 @@ void swap(T *p1, T *p2) {
     *p2 = temp;
 }
 
-int partition(int *arr, int first, int last) {
+template<typename T>
+int partition(T *arr, int first, int last) {
     int pivot = arr[last];
 
     int i = first;
@@ -20,7 +21,8 @@ int partition(int *arr, int first, int last) {
     return i;
 }
 
-void quickSort(int *arr, int first, int last) {
+template<typename T>
+void quickSort(T *arr, int first, int last) {
     if (first >= last)
         return;
 
