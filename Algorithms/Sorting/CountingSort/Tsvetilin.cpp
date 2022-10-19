@@ -36,6 +36,6 @@ void countingSort(list &data, int length)
     for (int i = length - 1; i >= 0; i--)
     {
         data[count[copy[i]] - 1] = copy[i];
-        count[copy[i]] = count[copy[i]] - 1;
+        --count[copy[i]];
     }
 }
