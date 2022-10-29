@@ -18,17 +18,13 @@ struct List
 	{
 		Node* toAdd = new Node{ nullptr, head, data };
 
-		if (head != nullptr) {
+		if (head != nullptr) 
 			head->previous = toAdd;
-		}
 
 		if (tail == nullptr)
-		{
 			tail = toAdd;
-		}
 
 		head = toAdd;
-
 		++count;
 
 		return head;
@@ -44,9 +40,7 @@ struct List
 			delete head;
 			head = newHead;
 			if (head == nullptr)
-			{
 				tail = nullptr;
-			}
 
 			return;
 		}
@@ -62,7 +56,6 @@ struct List
 		node->previous->next = node->next;
 		node->next->previous = node->previous;
 		delete node;
-
 	}
 
 	size_t erase_back()
@@ -75,14 +68,12 @@ struct List
 			Node* newTail = tail->previous;
 			delete tail;
 			tail = newTail;
+
 			if (tail == nullptr)
-			{
 				head = nullptr;
-			}
 			else
-			{
 				tail->next = nullptr;
-			}
+                
 			return x;
 		}
 
@@ -92,9 +83,7 @@ struct List
 	void move_front(Node* node)
 	{
 		if (node == head)
-		{
 			return;
-		}
 
 		if (node == tail)
 		{
@@ -146,14 +135,11 @@ int main()
 		else
 		{
 			if (list.count == t)
-			{
 				arr[list.erase_back()] = nullptr;
-			}
 
 			arr[x] = list.push_front(x);
 			std::cout << "false\n";
 		}
-
 
 	}
 }
