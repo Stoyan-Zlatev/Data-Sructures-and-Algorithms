@@ -1,4 +1,4 @@
-# Task . Find Merge Point of Two Lists (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2022/challenges/find-the-merge-point-of-two-joined-linked-lists>)
+# Task 2. Find Merge Point of Two Lists (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2022/challenges/find-the-merge-point-of-two-joined-linked-lists>)
 
 ## Statement:
 
