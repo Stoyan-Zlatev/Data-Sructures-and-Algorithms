@@ -18,28 +18,30 @@
  *
  */
 
-SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* llist, int data, int position) {
-    
-        SinglyLinkedListNode* toAdd = new SinglyLinkedListNode(data);
+SinglyLinkedListNode *insertNodeAtPosition(SinglyLinkedListNode *llist, int data, int position)
+{
 
+    SinglyLinkedListNode *toAdd = new SinglyLinkedListNode(data);
 
-    if(position==0){
-        toAdd->next=llist;
+    if (position == 0)
+    {
+        toAdd->next = llist;
         return toAdd;
     }
-    
+
     int index = 0;
-    SinglyLinkedListNode* current = llist;
-    SinglyLinkedListNode* previous = nullptr;
-    
-    while(index<position){
+    SinglyLinkedListNode *current = llist;
+    SinglyLinkedListNode *previous = nullptr;
+
+    while (index < position)
+    {
         previous = current;
         current = current->next;
         ++index;
     }
-    
-    previous->next=toAdd;
-    toAdd->next=current;
-    
+
+    previous->next = toAdd;
+    toAdd->next = current;
+
     return llist;
 }
