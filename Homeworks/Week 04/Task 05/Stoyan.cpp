@@ -24,23 +24,21 @@ void checkSequence(list<Ball> &balls, list<Ball>::iterator currentIterator, size
     list<Ball>::iterator left = currentIterator;
     list<Ball>::iterator right = ++currentIterator;
     list<Ball>::iterator leftBorder, rightBorder;
-    
+
     vector<list<Ball>::iterator> iteratorsToDelete;
     size_t sequenceCount = 0;
     for (leftBorder = left; leftBorder->color == target; leftBorder--) {
-        sequenceCount++;
         iteratorsToDelete.push_back(leftBorder);
     }
 
     for (rightBorder = right; rightBorder->color == target; rightBorder++) {
-        sequenceCount++;
         iteratorsToDelete.push_back(rightBorder);
     }
 
-    if (sequenceCount >= 3) {
-        destroyed += sequenceCount;
-        for (size_t i = 0; i < sequenceCount; i++) {
-            balls.erase(iteratorsToDelete[i]);
+    if (iteratorsToDelete.size() >= 3) {
+        destroyed += iteratorsToDelete.size();
+        for (auto iteratorToDelete : iteratorsToDelete) {
+            balls.erase(iteratorToDelete);
         }
 
         if (balls.empty()) {
