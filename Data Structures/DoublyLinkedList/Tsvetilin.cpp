@@ -22,6 +22,7 @@ struct List
         if (tail == nullptr)
             tail = node;
 
+        node->next = head;
         head = node;
         ++count;
     }
@@ -85,8 +86,37 @@ struct List
     {
         if (position > count)
             return;
+
+        size_t index = 0;
+        Node *prev = nullptr;
+        Node *current = head;
+        while (current && index < position)
+        {
+            prev = current;
+            current = current->next;
+            ++index;
+        }
+
+        if (prev == nullptr)
+        {
+            push_front(node);
+            return;
+        }
+
+        if (prev == tail)
+        {
+            push_back(node);
+            return;
+        }
+
+        prev->next = node;
+        node->previous = prev;
+        node->next = current;
+        current->previous = node;
+        ++count;
     }
 
+    // ensured after is part of the list
     void insert_after(Node *node, Node *after)
     {
         if (after == tail)
@@ -100,6 +130,7 @@ struct List
         ++count;
     }
 
+    // ensured node is part of the list
     void erase(Node *node)
     {
         --count;
@@ -128,7 +159,7 @@ struct List
         delete node;
     }
 
-    // remove nodes between those; nullptr for head/tail removal
+    // remove nodes between left and right; nullptr for head/tail removal
     void erase_range(Node *left, Node *right)
     {
         Node *current;
