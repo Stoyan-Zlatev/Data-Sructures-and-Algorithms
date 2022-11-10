@@ -48,7 +48,6 @@ replace 5
 add 9 6
 add 9 6
 replace 1
-Sample Output 0
 ```
 
 **Sample Output 0**
