@@ -8,4 +8,4 @@
 
 ## 2. Труда краси човека (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2022/challenges/challenge-3723>)
 
-## 5. Родопска демокрация (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2022/challenges/challenge-3722>)
+## 3. Родопска демокрация (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2022/challenges/challenge-3722>)
