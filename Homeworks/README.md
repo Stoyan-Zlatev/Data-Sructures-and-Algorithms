@@ -7,3 +7,5 @@
 ### Homework 03: Алгоритми за търсене - [Contest](<https://www.hackerrank.com/contests/sda-hw-3-2022/challenges>)
 ### Homework 04: Свързан списък - [Contest](<https://www.hackerrank.com/contests/sda-hw-4-2022/challenges>)
 ### Homework 05: Стек и опашка - [Contest](<https://www.hackerrank.com/contests/sda-hw-5-2022/challenges>)
+### Homework 06: Дървета - [Contest](<https://www.hackerrank.com/contests/sda-hw-6-2022/challenges>)
+### Homework 07: Балансирани дървета. AVL - [Contest](<https://www.hackerrank.com/contests/sda-hw-7-2022/challenges>)
