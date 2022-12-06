@@ -1,41 +1,45 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-priority_queue<size_t, vector<size_t>, greater<size_t>> legos;
+struct Interval {
+    size_t time;
+    int value;
+
+    Interval(size_t time, int value) {
+        this->time = time;
+        this->value = value;
+    }
+
+    bool operator<(const Interval &other) const {
+        return this->time < other.time || (this->time == other.time && this->value > other.value);
+    }
+};
+
 
 int main() {
-    size_t N, M, lego;
-    cin >> N >> M;
-    
-    for (size_t i = 0; i < N;i++) {
-        cin >> lego;
-        legos.push(lego);
-    }
-    
-    size_t rounds = 0;
-    size_t first, second;
-    while(true) {
-        if (legos.top() > M)
-            break;
-        if (legos.empty()) {
-            cout << -1;
-            return 0;
+    size_t N, start, end;
+    size_t counter = 0;
+    cin >> N;
+
+    multiset<Interval, less<Interval>> intervals;
+
+    while (N--) {
+        cin >> start >> end;
+        if (start != end) {
+            intervals.insert({start, 1});
+            intervals.insert({end - 1, -1});
         }
-        
-        first = legos.top();
-        legos.pop();
-        if (!legos.empty()) {
-         second = legos.top();
-          legos.pop();
-        } else {
-             cout << -1;
-            return 0;
-        }
-        
-        rounds++;
-        legos.push(first + 2*second);
     }
 
-    cout << rounds;
+    size_t max = 0;
+
+    for (auto interval: intervals) {
+        counter += interval.value;
+        if (counter > max)
+            max = counter;
+    }
+
+    cout << max;
     return 0;
 }
