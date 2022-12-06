@@ -27,7 +27,7 @@ int main()
 
         if (leftHalf.size() > rightHalf.size() + 1)
         {
-            rightHalf.push(rightHalf.top());
+            rightHalf.push(leftHalf.top());
             leftHalf.pop();
         }
 
