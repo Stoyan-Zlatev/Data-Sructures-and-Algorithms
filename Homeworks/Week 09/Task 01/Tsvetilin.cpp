@@ -1,43 +1,58 @@
-#include <vector>
 #include <iostream>
-#include <algorithm>
 #include <unordered_map>
-#include <climits>
+#include <set>
 
 int main()
 {
-    std::unordered_map<size_t, long long> q;
-
     size_t n;
     std::cin >> n;
+    std::string current = "/";
 
-    size_t x;
-    std::vector<size_t> nums(n);
+    std::unordered_map<std::string, std::pair<std::string, std::set<std::string>>> directories;
+
+    directories.insert({current, {"", {}}});
+
     for (size_t i = 0; i < n; i++)
     {
-        std::cin >> x;
-        q.insert({x, -1});
-        nums[i] = x;
-    }
+        std::string cmd;
+        std::cin >> cmd;
 
-    long long startIndex = 0;
-    long long maxSize = LLONG_MIN;
-
-    long long i = 0;
-    for (; i < n; i++)
-    {
-        while (q[nums[i]] >= startIndex)
+        if (cmd == "mkdir")
         {
-            maxSize = std::max(maxSize, i - startIndex);
-            startIndex++;
+            std::cin >> cmd;
+            if (directories[current].second.count(cmd) > 0)
+            {
+                std::cout << "Directory already exists\n";
+                continue;
+            }
+
+            directories.insert({current + cmd + "/", {current, {}}});
+            directories[current].second.insert(cmd);
         }
+        else if (cmd == "cd")
+        {
+            std::cin >> cmd;
+            if (cmd == ".." && current != "/")
+                current = directories[current].first;
+            else if (directories[current].second.count(cmd) > 0)
+                current += cmd + "/";
+            else
+                std::cout << "No such directory\n";
+        }
+        else if (cmd == "ls")
+        {
+            for (auto &dir : directories[current].second)
+            {
+                std::cout << dir << " ";
+            }
 
-        q[nums[i]] = i;
+            std::cout << "\n";
+        }
+        else if (cmd == "pwd")
+        {
+            std::cout << current << "\n";
+        }
     }
-
-    maxSize = std::max(maxSize, i - startIndex);
-
-    std::cout << maxSize;
 
     return 0;
 }
