@@ -2,33 +2,60 @@
 
 using namespace std;
 
+const string MKDIR = "mkdir";
+const string CD = "cd";
+const string LS = "ls";
+const string PWD = "pwd";
+unordered_map<string, pair<string, set<string>>> directories;
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    size_t N, number;
+    string currentDirectory = "/";
+    directories.insert({currentDirectory, {"", {}}});
+    size_t N;
     cin >> N;
-    unordered_map<size_t, size_t> numberIndex;
-    vector<size_t> numbers;
-    size_t maxSequenceCount = 0, start = 0;
-    for (size_t currentIndex = 0; currentIndex < N; currentIndex++) {
-        cin >> number;
-        numbers.push_back(number);
-        if (!numberIndex.count(number)) {
-            numberIndex.insert(pair<size_t, size_t>(number, currentIndex));
-            if ((currentIndex - start + 1) > maxSequenceCount) {
-                maxSequenceCount = (currentIndex - start + 1);
+
+    string command, directoryName;
+    for (size_t i = 0; i < N; ++i) {
+        cin >> command;
+        directoryName = "";
+        if (command == MKDIR) {
+            cin >> directoryName;
+            if (std::find(directories[currentDirectory].second.begin(), directories[currentDirectory].second.end(),
+                          directoryName) == directories[currentDirectory].second.end()) {
+                directories.insert({currentDirectory + directoryName + "/", {currentDirectory, {}}});
+                directories[currentDirectory].second.insert(directoryName);
+            } else {
+                cout << "Directory already exists\n";
             }
-        } else {
-            for (size_t k = start; k < numberIndex[number]; ++k) {
-                numberIndex.erase(numbers[k]);
+        } else if (command == CD) {
+            cin >> directoryName;
+            if (directoryName == "..") {
+                if (currentDirectory != "/") {
+                    currentDirectory = directories[currentDirectory].first;
+                } else {
+                    cout << "No such directory\n";
+                }
+            } else if (
+                    std::find(directories[currentDirectory].second.begin(), directories[currentDirectory].second.end(),
+                              directoryName) != directories[currentDirectory].second.end()) {
+                currentDirectory += directoryName;
+                currentDirectory += "/";
+            } else {
+                cout << "No such directory\n";
             }
-            start = numberIndex[number] + 1;
-            numberIndex[number] = currentIndex;
+
+        } else if (command == LS) {
+            for (const string &directory: directories[currentDirectory].second) {
+                cout << directory << " ";
+            }
+            cout << '\n';
+        } else if (command == PWD) {
+            cout << currentDirectory << "\n";
         }
     }
-
-    cout << maxSequenceCount;
 
     return 0;
 }
