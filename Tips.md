@@ -22,3 +22,14 @@ int array[10]{};
 #include <bits/stdc++.h>
 ```
 съдържа най-често използване библиотеки и е достатъчно да включим нея, без да мислим коя библиотека ни липсва според нещата, които използваме. Може да я изтеглите от [github](<https://github.com/tekfyl/bits-stdc-.h-for-mac/blob/master/stdc%2B%2B.h>).
+
+
+#### Оптимизация за heap (приоритетна опашка)
+Стандартният минимален хийп от наредени двойки, който може да се създаде като
+```c++
+std::priority_queue<std::pair<int,int>> pq;
+```
+е със значително по-лошо time complexity на операциите, в сравнения с този, при който експлицитно са указани имплементация и компаратор:
+```c++
+std::priority_queue<std::pair<int,int>, std::vector<std::pair<int,int>, std::greater<std::pair<int,int>>> pq;
+```
