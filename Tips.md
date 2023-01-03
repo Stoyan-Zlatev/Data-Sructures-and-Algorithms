@@ -38,3 +38,24 @@ std::priority_queue<std::pair<int,int>> pq;
 ```c++
 std::priority_queue<std::pair<int,int>, std::vector<std::pair<int,int>, std::greater<std::pair<int,int>>> pq;
 ```
+
+---
+
+#### Стандартна имплементация на компаратор std::greater<std::pair>
+Default-ната имплементация на компараторът за наредени двойки има следната имплементация:
+```c++
+template<typename T> struct greater {
+        constexpr bool operator()(T const& a, T const& b) const {
+            return a.first>b.first || ( (a.first<b.first) && (a.second>b.second));
+        }
+};
+```
+която при желание за създаване на минимален heap сортиращ по първата компонента, става неефективна заради допълнителното условие за втората компонента. Тогава е подходящо предефиниране на компаратор:
+```c++
+struct Greater{
+    bool operator()(const std::pair<int,int>& first, const std::pair<int,int>& second ) const {
+        return first.first > second.first;
+    }
+};
+```
+
