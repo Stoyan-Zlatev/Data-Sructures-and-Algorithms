@@ -4,7 +4,7 @@ using namespace std;
 
 const size_t TARGET = 10080;
 const size_t MAX_SIZE = 1000;
-const size_t MOD = 1000000007;
+const size_t MOD = 1e9 + 7;
 size_t matrix[MAX_SIZE + 1][TARGET + 1];
 
 void init(const size_t &N, size_t *arr) {
@@ -20,18 +20,8 @@ void init(const size_t &N, size_t *arr) {
     }
 }
 
-size_t findAllSums(const size_t &N) {
-    size_t count = 0;
-    for (size_t i = 0; i <= TARGET; i++) {
-        count += matrix[N][i];
-        count %= MOD;
-    }
-
-    return count;
-}
-
-void solve(const size_t &N, const size_t *numbers) {
-    for (size_t i = 1; i <= N; i++) {
+size_t findAllSums(const size_t &N, const size_t *numbers) {
+    for (size_t i = 1; i < N; i++) {
         for (size_t j = 1; j <= TARGET; j++) {
             matrix[i][j] = matrix[i - 1][j];
             if (numbers[i - 1] <= j) {
@@ -39,6 +29,19 @@ void solve(const size_t &N, const size_t *numbers) {
             }
         }
     }
+    
+    // because of the empty subset, since the inner loop start from 1
+    size_t count = 1;
+    for (size_t j = 1; j <= TARGET; j++) {
+        matrix[N][j] = matrix[N - 1][j];
+        if (numbers[N - 1] <= j) {
+            matrix[N][j] += (matrix[N - 1][j - numbers[N - 1]]) % MOD;
+        }
+        count += matrix[N][j];
+        count %= MOD;
+    }
+
+    return count;
 }
 
 int main() {
@@ -48,8 +51,7 @@ int main() {
     size_t numbers[N];
 
     init(N, numbers);
-    solve(N, numbers);
-
-    cout << findAllSums(N);
+    cout << findAllSums(N, numbers);
+    
     return 0;
 }
