@@ -3,31 +3,51 @@
 
 using namespace std;
 
-size_t N, M;
-unordered_map<size_t, unordered_map<size_t, size_t>> hashMap;
+unordered_map<size_t, bool> memo;
+stack<size_t> resultSubset;
 
-bool isInBoundaries(const size_t &x, const size_t &y) {
-    return x < N && x >= 0 && y < M && y >= 0;
-}
-
-size_t traverse(size_t x = N - 1, size_t y = M - 1) {
-    if (!isInBoundaries(x, y)) {
-        return 0;
+bool solve(const vector<size_t>& numbers, long long sum, const size_t& number = 0) {
+    if (memo.find(sum) != memo.end()) {
+        return memo[sum];
     }
 
-    if (hashMap.find(x) != hashMap.end() && hashMap[x].find(y) != hashMap[x].end()) {
-        return hashMap[x][y];
+    if (sum == 0) {
+        return true;
     }
 
-    hashMap[x][y] = traverse(x - 1, y) + traverse(x, y - 1);
-    return hashMap[x][y];
-}
+    if (sum < 0) {
 
+        return false;
+    }
+
+    for (const auto& element: numbers) {
+        if (solve(numbers, sum - element, element)) {
+            resultSubset.push(element);
+            memo[sum] = true;
+            return true;
+        }
+    }
+
+    memo[sum] = false;
+    return false;
+}
 
 int main() {
-    cin >> N >> M;
+    size_t N;
+    long long targetSum;
+    cin >> N >> targetSum;
 
-    hashMap[0][0] = 1;
-    traverse();
-    cout << hashMap[N - 1][M - 1];
+    vector<size_t> numbers(N);
+    for (size_t i = 0; i < N; ++i) {
+        cin >> numbers[i];
+    }
+
+    cout << "{ ";
+    if (solve(numbers, targetSum)) {
+        while (!resultSubset.empty()) {
+            cout << resultSubset.top() << " ";
+            resultSubset.pop();
+        }
+    }
+    cout << "}";
 }
