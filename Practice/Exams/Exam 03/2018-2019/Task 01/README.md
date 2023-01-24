@@ -1,0 +1,1 @@
+https://www.hackerrank.com/contests/sdatest3/challenges/test3-zad1/problem
