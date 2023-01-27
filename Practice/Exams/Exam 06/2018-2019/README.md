@@ -1,0 +1,1 @@
+https://www.hackerrank.com/contests/test6-sda/challenges
