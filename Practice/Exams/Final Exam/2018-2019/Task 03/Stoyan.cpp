@@ -2,46 +2,23 @@
 
 using namespace std;
 
-unordered_map <size_t, vector<size_t>> graph;
-unordered_map<size_t, bool> visited;
-size_t components = 0;
-
-void dfs(size_t value) {
-    visited[value] = true;
-    for (const auto &element: graph[value]) {
-        if (!visited[element]) {
-            dfs(element);
-        }
-    }
-}
-
-void traverse(size_t N) {
-    for (size_t i = 0; i < N; ++i) {
-        if (!visited[i]) {
-            dfs(i);
-            components++;
-        }
-    }
-}
+unordered_map <string, size_t> wordMap;
 
 int main() {
-    size_t T, N, M, from, to;
-    cin >> T;
-
-    for (size_t i = 0; i < T; ++i) {
-        cin >> N >> M;
-        for (size_t j = 0; j < M; ++j) {
-            cin >> from >> to;
-            graph[from].push_back(to);
-            graph[to].push_back(from);
-
+    string s1;
+    while (cin >> s1) {
+        wordMap[s1]++;
+    }
+    vector <string> words;
+    for (const auto &element: wordMap) {
+        if (element.second == 1) {
+            words.push_back(element.first);
         }
-        traverse(N);
-        cout << components << " ";
-        graph.clear();
-        visited.clear();
-        components = 0;
     }
 
+    sort(words.begin(), words.end());
+    for (const auto &word: words) {
+        cout << word << '\n';
+    }
     return 0;
 }

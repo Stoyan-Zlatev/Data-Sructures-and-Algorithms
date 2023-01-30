@@ -2,44 +2,45 @@
 
 using namespace std;
 
-unordered_map <size_t, vector<size_t>> graph;
-unordered_map <size_t, size_t> visited;
-size_t componentCounter = 1;
-
-void dfs(const size_t &value) {
-    visited[value] = componentCounter;
-    for (const auto &element: graph[value]) {
-        if (!visited[element]) {
-            dfs(element);
-        }
-    }
-}
-
-void traverse(const size_t &N) {
-    for (size_t i = 1; i <= N; ++i) {
-        if (!visited[i]) {
-            dfs(i);
-            componentCounter++;
-        }
-    }
-}
+unordered_map<int, bool> numbersMap;
+unordered_map<int, pair<int, int>> numberPosition;
+unordered_map<int, int> orderedNumberPosition;
 
 int main() {
-    size_t N, M, Q, from, to;
-    cin >> N >> M;
-
-    for (size_t i = 0; i < M; ++i) {
-        cin >> from >> to;
-        graph[from].push_back(to);
-        graph[to].push_back(from);
+    size_t N, Q, query;
+    cin >> N;
+    vector<int> numbers(N);
+    multiset<int> copyNumbers;
+    for (size_t i = 0; i < N; ++i) {
+        cin >> numbers[i];
+        copyNumbers.insert(numbers[i]);
+        if (!numbersMap[numbers[i]]) {
+            numberPosition[numbers[i]] = {i, i};
+        } else {
+            numberPosition[numbers[i]].second = i;
+        }
+        numbersMap[numbers[i]] = true;
     }
-
-    traverse(N);
-
     cin >> Q;
+    size_t index = 0;
+    for (const auto &element: copyNumbers) {
+        if (orderedNumberPosition.find(element) == orderedNumberPosition.end()) {
+            orderedNumberPosition[element] = index;
+        }
+        index++;
+    }
     for (size_t i = 0; i < Q; ++i) {
-        cin >> from >> to;
-        cout << (visited[from] == visited[to]) << " ";
+        cin >> query;
+        if (numbersMap[query]) {
+            cout << numberPosition[query].first << " " << numberPosition[query].second << '\n';
+        } else {
+            size_t result = *copyNumbers.upper_bound(query);
+            if (orderedNumberPosition.find(result) != orderedNumberPosition.end()) {
+                cout << orderedNumberPosition[result] << '\n';
+            } else {
+                cout << N << '\n';
+            }
+        }
     }
     return 0;
 }

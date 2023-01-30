@@ -1,1 +1,1 @@
-https://www.hackerrank.com/contests/exam-2020-02-06-sda/challenges
+https://www.hackerrank.com/contests/sda-2019-2020-exam-2e3nr4rr/challenges

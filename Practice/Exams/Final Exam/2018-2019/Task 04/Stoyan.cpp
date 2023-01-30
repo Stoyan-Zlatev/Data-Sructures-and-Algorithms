@@ -2,77 +2,44 @@
 
 using namespace std;
 
-struct Node {
-    Node *left;
-    Node *right;
-    int value;
+unordered_map <size_t, vector<size_t>> graph;
 
-    Node(int value) {
-        this->value = value;
-        this->left = NULL;
-        this->right = NULL;
-    }
-};
+set <size_t> nodes;
+bool isCyclic = false;
 
-class BST {
-
-public:
-    BST() {
-        root = NULL;
-    }
-
-    void insert(int value) {
-        root = insert(root, value);
-    }
-
-
-    void printLeftProfile() {
-        Node *current = root;
-        queue < Node * > levels;
-        levels.push(current);
-        while (!levels.empty()) {
-            size_t levelSize = levels.size();
-            cout << levels.front()->value << " ";
-            for (size_t i = 0; i < levelSize; ++i) {
-                Node *top = levels.front();
-                levels.pop();
-                if (top->left) {
-                    levels.push(top->left);
-                }
-                if (top->right) {
-                    levels.push(top->right);
-                }
-            }
+void dfs(size_t value) {
+    nodes.insert(value);
+    for (const auto &element: graph[value]) {
+        if (nodes.find(element) != nodes.end()) {
+            isCyclic = true;
+            return;
         }
+        dfs(element);
     }
 
-private:
-    //you can write helper functions if needed
-    Node *root;
+    nodes.erase(value);
+}
 
-    Node *insert(Node *curNode, int value) {
-        if (curNode == NULL) {
-            curNode = new Node(value);
-        } else if (curNode->value < value) {
-            curNode->right = insert(curNode->right, value);
-        } else if (curNode->value > value) {
-            curNode->left = insert(curNode->left, value);
-        } else {
-            //if we already have this value at the tree - do nothing
-        }
-        return curNode;
-    }
-};
 
 int main() {
-    int n;
-    cin >> n;
-    int value;
-    BST tree;
-    for (int i = 0; i < n; i++) {
-        cin >> value;
-        tree.insert(value);
+    size_t Q, N, M, from, to, weight;
+    cin >> Q;
+
+    for (size_t i = 0; i < Q; ++i) {
+        cin >> N >> M;
+        for (size_t j = 0; j < M; ++j) {
+            cin >> from >> to >> weight;
+            graph[from].push_back(to);
+        }
+
+        for (size_t j = 1; j <= N; ++j) {
+            dfs(j);
+        }
+        cout << (isCyclic ? "true" : "false") << " ";
+        graph.clear();
+        isCyclic = false;
+        nodes.clear();
     }
-    tree.printLeftProfile();
+
     return 0;
 }

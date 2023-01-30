@@ -2,31 +2,77 @@
 
 using namespace std;
 
-unordered_map<int, size_t> numbersMap;
+struct Node {
+    Node *left;
+    Node *right;
+    int value;
 
-int main() {
-    size_t N, maxSize = 0, size = 0, number, startIndex = 0;
-    cin >> N;
+    Node(int value) {
+        this->value = value;
+        this->left = NULL;
+        this->right = NULL;
+    }
+};
 
-    for (size_t i = 0; i < N; ++i) {
-        cin >> number;
-        if (numbersMap.find(number) == numbersMap.end() || numbersMap[number] < startIndex) {
-            numbersMap[number] = i;
-        } else {
-            size = i - startIndex;
-            if (maxSize < size) {
-                maxSize = size;
+class BST {
+
+public:
+    BST() {
+        root = NULL;
+    }
+
+    void insert(int value) {
+        root = insert(root, value);
+    }
+
+
+    void printLeftProfile() {
+        Node *current = root;
+        queue < Node * > levels;
+        levels.push(current);
+        while (!levels.empty()) {
+            size_t levelSize = levels.size();
+            cout << levels.front()->value << " ";
+            for (size_t i = 0; i < levelSize; ++i) {
+                Node *top = levels.front();
+                levels.pop();
+                if (top->left) {
+                    levels.push(top->left);
+                }
+                if (top->right) {
+                    levels.push(top->right);
+                }
             }
-            startIndex = numbersMap[number] + 1;
-            numbersMap[number] = i;
         }
     }
 
-    size = N - startIndex;
-    if (maxSize < size) {
-        maxSize = size;
-    }
+private:
+    //you can write helper functions if needed
+    Node *root;
 
-    cout << maxSize;
+    Node *insert(Node *curNode, int value) {
+        if (curNode == NULL) {
+            curNode = new Node(value);
+        } else if (curNode->value < value) {
+            curNode->right = insert(curNode->right, value);
+        } else if (curNode->value > value) {
+            curNode->left = insert(curNode->left, value);
+        } else {
+            //if we already have this value at the tree - do nothing
+        }
+        return curNode;
+    }
+};
+
+int main() {
+    int n;
+    cin >> n;
+    int value;
+    BST tree;
+    for (int i = 0; i < n; i++) {
+        cin >> value;
+        tree.insert(value);
+    }
+    tree.printLeftProfile();
     return 0;
 }
