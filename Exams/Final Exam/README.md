@@ -5,7 +5,7 @@
 
 ---
 
-## Task 01: Easy (Easy) - [Hackerrank](<hhttps://www.hackerrank.com/contests/sda-exam-20222023-part-1/challenges/challenge-3906>)
+## Task 01: Easy (Easy) - [Hackerrank](<https://www.hackerrank.com/contests/sda-exam-20222023-part-1/challenges/challenge-3906>)
 
 ## Task 02: Facebook приятели (Easy) - [Hackerrank](<https://www.hackerrank.com/contests/sda-exam-20222023-part-1/challenges/challenge-3904>)
 
