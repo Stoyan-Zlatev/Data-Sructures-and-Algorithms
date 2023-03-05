@@ -50,10 +50,10 @@ int main()
     vector.resize(5);                      // Change size
     vector.reserve(10);                    // Change capacity
     vector[0];                             // Access index
-    vector.at(1);                          // Access index == vec[2]
+    vector.at(1);                          // Access index == vec[1]
     vector.front();                        // First item == vec[0]
     vector.back();                         // Last item == vec[vec.size() - 1]
-    vector.insert(vector.begin() + 2, 20); // Insert 42 at index 2
+    vector.insert(vector.begin() + 2, 20); // Insert 20 at index 2
     vector.erase(vector.begin() + 2);      // Remove item at index 2
 
     // Iterate using index
@@ -114,7 +114,7 @@ int main()
     // Insert element at position 1
     auto insertIndex = list.begin();
     std::advance(insertIndex, 1); // move iterator to position 1
-    list.insert(insertIndex, 42);
+    list.insert(insertIndex, 20);
 
     // Erase element at position 0
     auto removeIndex = list.begin();
@@ -142,8 +142,8 @@ int main()
     set.erase(set.begin());                                                             // Remove element
     set.count(20);                                                                      // Count occurrences, always 1 or 0
     set.find(20);                                                                       // Valid iterator to the element if found, otherwise st.end()
-    set.lower_bound(20);                                                                // Iterator to the first element >= 42
-    set.upper_bound(20);                                                                // Iterator to the first element > 42
+    set.lower_bound(20);                                                                // Iterator to the first element >= 20
+    set.upper_bound(20);                                                                // Iterator to the first element > 20
     set.clear();                                                                        // Remove all elements
 
     // Iterate set
@@ -183,7 +183,7 @@ int main()
     std::unordered_set<int> hash_set;
     hash_set.insert(1);  // Add element
     hash_set.insert(-1); // Add element
-    hash_set.erase(-1);  // Remove elemnt
+    hash_set.erase(-1);  // Remove element
     hash_set.count(1);   // Count occurrences, always 1 or 0
     hash_set.find(1);    // Iterator to the element if found, otherwise ust.end()
     hash_set.clear();    // Remove all elements
@@ -192,7 +192,7 @@ int main()
     std::unordered_multiset<int> unordered_multiset;
     unordered_multiset.insert(1);  // Add element
     unordered_multiset.insert(-1); // Add element
-    unordered_multiset.erase(-1);  // Remove elemnt
+    unordered_multiset.erase(-1);  // Remove element
     unordered_multiset.count(1);   // Count occurrences
     unordered_multiset.find(1);    // Iterator to the element if found, otherwise ust.end()
     unordered_multiset.clear();    // Remove all elements
@@ -212,10 +212,10 @@ int main()
     std::max_element(vector.begin(), vector.end());                     // Get  iterator to max element
     std::min_element(vector.begin(), vector.end());                     // Get iterator to min element
     std::nth_element(vector.begin(), vector.begin() + 2, vector.end()); // Rearrange elements so nth is the pivot
-    std::count(vector.begin(), vector.end(), 20);                       // Count the occurrences of 42
-    std::find(vector.begin(), vector.end(), 20);                        // Iterator to the first occurrence of 42, vector.end() if not found
-    std::lower_bound(vector.begin(), vector.end(), 20);                 // Iterator to the first element >= 42
-    std::upper_bound(vector.begin(), vector.end(), 20);                 // Iterator to the first element > 42
+    std::count(vector.begin(), vector.end(), 20);                       // Count the occurrences of 20
+    std::find(vector.begin(), vector.end(), 20);                        // Iterator to the first occurrence of 20, vector.end() if not found
+    std::lower_bound(vector.begin(), vector.end(), 20);                 // Iterator to the first element >= 20
+    std::upper_bound(vector.begin(), vector.end(), 20);                 // Iterator to the first element > 20
     std::binary_search(vector.begin(), vector.end(), 20);               // True if 42 exists in the sorted collection
 
     std::sort(vector.begin(), vector.end());        // Sort
@@ -225,7 +225,7 @@ int main()
               { return a > b; }); // Sort with custom function
 
     std::next_permutation(vector.begin(), vector.end()); // Get the next permutation
-    std::replace(vector.begin(), vector.end(), 0, 20);   // Replace all occurrences of 0 with 42
+    std::replace(vector.begin(), vector.end(), 0, 20);   // Replace all occurrences of 0 with 20
     std::partition(vector.begin(), vector.end(),
                    [](auto a)
                    { return a < 10; }); // Partition and return iterator to pivot
