@@ -1,144 +1,149 @@
 #pragma once
-#include <iostream>
-
-template<typename T>
-struct StackElement
+template <typename T>
+class Queue
 {
-	T data;
-	StackElement<T>* next;
-};
-
-template<typename T>
-class Stack
-{
-	StackElement<T>* top;
+	T* data; // array to store queue elements
+	size_t capacity, //maximum capacity 
+		count; //size of the queue
+	size_t head, //first element of the queue
+		tail; //last element of the queue
 public:
-	Stack();
-	Stack(const Stack<T>&);
-	Stack<T>& operator=(const Stack<T>&);
-	~Stack();
+	Queue();
+	Queue(const Queue<T>&);
+	Queue<T>& operator=(const Queue<T>&);
+	~Queue();
 
-	void push(const T&);
-	T pop();
+	T& peek() const; // used to access or modify the next element
+	void enqueue(const T&); // add item to the queue
+	T dequeue(); //remove item from the queue (first/front/head element)
 
-	T peek() const;
-	bool empty() const;
+	size_t getCount() const;
+	bool isEmpty() const;
+	bool isFull() const;
 private:
-	void copy(const Stack<T>&);
+	void resize(const size_t);
+
+	void copyFrom(const Queue<T>&);
 	void free();
 };
 
 template <typename T>
-Stack<T>::Stack()
+Queue<T>::Queue()
 {
-	top = nullptr;
+	capacity = 4;
+	data = new T[capacity];
+
+	count = 0;
+	head = tail = 0;
 }
 
 template <typename T>
-Stack<T>::Stack(const Stack<T>& other)
+Queue<T>::Queue(const Queue<T>& other)
 {
-	copy(other);
+	copyFrom(other);
 }
 
 template <typename T>
-Stack<T>& Stack<T>::operator=(const Stack<T>& other)
+Queue<T>& Queue<T>::operator=(const Queue<T>& other)
 {
 	if (this != &other)
 	{
 		free();
-		copy(other);
+		copyFrom(other);
 	}
-
 	return *this;
 }
 
 template <typename T>
-Stack<T>::~Stack()
+Queue<T>::~Queue()
 {
 	free();
 }
 
 template <typename T>
-void Stack<T>::copy(const Stack<T>& s)
-{
-	if (s.top == nullptr)
-	{
-		top = nullptr;
-		return;
-	}
+T& Queue<T>::peek() const {
+	if (isEmpty())
+		throw std::exception("The collection is empty!");
 
-	StackElement<T>* toCopy = nullptr, *newElement = nullptr, *previousElement = nullptr;
-	toCopy = s.top;
-
-	newElement = new StackElement<T>;
-	newElement->data = toCopy->data; //copy
-	newElement->next = nullptr;
-	top = newElement;
-
-	previousElement = top;
-	toCopy = toCopy->next;
-
-	while (toCopy != nullptr)
-	{
-		newElement = new StackElement<T>;
-		newElement->data = toCopy->data; //copy
-		newElement->next = nullptr;
-
-		previousElement->next = newElement;
-		previousElement = newElement;
-		toCopy = toCopy->next;
-	}
-
+	return data[head];
 }
 
 template <typename T>
-void Stack<T>::free()
+void Queue<T>::enqueue(const T& obj)
 {
-	StackElement<T>* toDelete;
+	if (isFull())
+		resize(capacity * 2);
 
-	while (top != nullptr)
-	{
-		toDelete = top;
-		top = top->next;
-		delete toDelete;
-	}
+	data[tail++] = obj;
+	tail %= capacity;
+
+	count++;
 }
 
 template <typename T>
-void Stack<T>::push(const T& d)
+T Queue<T>::dequeue()
 {
-	StackElement<T>* p = new StackElement<T>;
-	p->data = d;
-	p->next = top;
+	if (isEmpty())
+		throw std::exception("The collection is empty!");
 
-	top = p;
+	T toReturn = data[head];
+	(++head) %= capacity;
+	count--;
+
+	return toReturn;
 }
 
 template <typename T>
-T Stack<T>::pop()
+size_t Queue<T>::getCount() const
 {
-	if (empty())
-		throw "Stack is empty!";
-
-	StackElement<T>* p = top;
-	top = top->next;
-	T data = p->data;
-	delete p;
-
-	return data;
+	return count;
 }
 
 template <typename T>
-T Stack<T>::peek() const
+bool Queue<T>::isEmpty() const
 {
-	if (empty())
-		throw "Stack is empty";
-
-	return top->data;
+	return count == 0;
 }
 
 template <typename T>
-bool Stack<T>::empty() const
+bool Queue<T>::isFull() const
 {
-	return top == nullptr;
+	return count == capacity;
+}
+
+template <typename T>
+void Queue<T>::resize(const size_t newCapacity)
+{
+	T* newData = new T[newCapacity];
+
+	for (size_t i = 0, ind = head; i < count; i++, (++ind) %= capacity)
+		newData[i] = data[ind];
+
+	free();
+	capacity = newCapacity;
+	data = newData;
+
+	head = 0;
+	tail = count;
+}
+
+template <typename T>
+void Queue<T>::copyFrom(const Queue<T>& other)
+{
+	data = new T[other.capacity];
+
+	for (size_t i = 0; i < other.capacity; i++)
+		data[i] = other.data[i];
+
+	head = other.head;
+	tail = other.tail;
+
+	count = other.count;
+	capacity = other.capacity;
+}
+
+template <typename T>
+void Queue<T>::free()
+{
+	delete[] data;
 }
