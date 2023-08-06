@@ -10,5 +10,5 @@ public:
     UnionFind(size_t vertices);
 
     bool areInOneSet(size_t first, size_t second);
-    bool unionVertices(size_t first, size_t second);
+    void unionVertices(size_t first, size_t second);
 };

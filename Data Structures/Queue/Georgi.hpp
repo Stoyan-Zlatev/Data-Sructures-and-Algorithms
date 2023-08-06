@@ -1,7 +1,7 @@
 #pragma once
+
 template <typename T>
-class Queue
-{
+class Queue {
 	T* data; // array to store queue elements
 	size_t capacity, //maximum capacity 
 		count; //size of the queue
@@ -28,8 +28,7 @@ private:
 };
 
 template <typename T>
-Queue<T>::Queue()
-{
+Queue<T>::Queue() {
 	capacity = 4;
 	data = new T[capacity];
 
@@ -38,16 +37,13 @@ Queue<T>::Queue()
 }
 
 template <typename T>
-Queue<T>::Queue(const Queue<T>& other)
-{
+Queue<T>::Queue(const Queue<T>& other) {
 	copyFrom(other);
 }
 
 template <typename T>
-Queue<T>& Queue<T>::operator=(const Queue<T>& other)
-{
-	if (this != &other)
-	{
+Queue<T>& Queue<T>::operator=(const Queue<T>& other) {
+	if (this != &other) {
 		free();
 		copyFrom(other);
 	}
@@ -55,24 +51,24 @@ Queue<T>& Queue<T>::operator=(const Queue<T>& other)
 }
 
 template <typename T>
-Queue<T>::~Queue()
-{
+Queue<T>::~Queue() {
 	free();
 }
 
 template <typename T>
 T& Queue<T>::peek() const {
-	if (isEmpty())
+	if (isEmpty()) {
 		throw std::exception("The collection is empty!");
+	}
 
 	return data[head];
 }
 
 template <typename T>
-void Queue<T>::enqueue(const T& obj)
-{
-	if (isFull())
+void Queue<T>::enqueue(const T& obj) {
+	if (isFull()) {
 		resize(capacity * 2);
+	}
 
 	data[tail++] = obj;
 	tail %= capacity;
@@ -81,10 +77,10 @@ void Queue<T>::enqueue(const T& obj)
 }
 
 template <typename T>
-T Queue<T>::dequeue()
-{
-	if (isEmpty())
+T Queue<T>::dequeue() {
+	if (isEmpty()) {
 		throw std::exception("The collection is empty!");
+	}
 
 	T toReturn = data[head];
 	(++head) %= capacity;
@@ -94,30 +90,27 @@ T Queue<T>::dequeue()
 }
 
 template <typename T>
-size_t Queue<T>::getCount() const
-{
+size_t Queue<T>::getCount() const {
 	return count;
 }
 
 template <typename T>
-bool Queue<T>::isEmpty() const
-{
+bool Queue<T>::isEmpty() const {
 	return count == 0;
 }
 
 template <typename T>
-bool Queue<T>::isFull() const
-{
+bool Queue<T>::isFull() const {
 	return count == capacity;
 }
 
 template <typename T>
-void Queue<T>::resize(const size_t newCapacity)
-{
+void Queue<T>::resize(const size_t newCapacity) {
 	T* newData = new T[newCapacity];
 
-	for (size_t i = 0, ind = head; i < count; i++, (++ind) %= capacity)
+	for (size_t i = 0, ind = head; i < count; i++, (++ind) %= capacity) {
 		newData[i] = data[ind];
+	}
 
 	free();
 	capacity = newCapacity;
@@ -128,12 +121,12 @@ void Queue<T>::resize(const size_t newCapacity)
 }
 
 template <typename T>
-void Queue<T>::copyFrom(const Queue<T>& other)
-{
+void Queue<T>::copyFrom(const Queue<T>& other) {
 	data = new T[other.capacity];
 
-	for (size_t i = 0; i < other.capacity; i++)
+	for (size_t i = 0; i < other.capacity; i++) {
 		data[i] = other.data[i];
+	}
 
 	head = other.head;
 	tail = other.tail;
@@ -143,7 +136,6 @@ void Queue<T>::copyFrom(const Queue<T>& other)
 }
 
 template <typename T>
-void Queue<T>::free()
-{
+void Queue<T>::free() {
 	delete[] data;
 }

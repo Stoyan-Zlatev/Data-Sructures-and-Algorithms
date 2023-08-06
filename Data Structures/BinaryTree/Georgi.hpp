@@ -7,11 +7,7 @@ struct Node {
 	Node* left = nullptr;
 	Node* right = nullptr;
 
-	Node(const T& value) {
-		this->value = value;
-		this->left = left;
-		this->right = right;
-	}
+	Node(const T& value) : value(value) { }
 
 	Node(const Node<T>& other) {
 		copyFrom(other);
@@ -107,7 +103,6 @@ template <typename T>
 void BinarySearchTree<T>::copyFrom(const BinarySearchTree<T>& other) {
 	root = new Node<T>(*other.root);
 }
-
 
 template <typename T>
 void BinarySearchTree<T>::free() {

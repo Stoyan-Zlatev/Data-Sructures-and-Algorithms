@@ -1,4 +1,4 @@
-#include "Set.h"
+#include "BitSet.h"
 #include <iostream>
 
 const unsigned char BITS[] = { 128, 64, 32, 16, 8, 4, 2, 1 };

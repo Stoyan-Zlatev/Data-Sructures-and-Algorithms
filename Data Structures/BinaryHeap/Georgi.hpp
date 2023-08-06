@@ -20,11 +20,6 @@ private:
 	void siftDown(size_t index);
 
 public:
-	Heap() = default;
-	Heap(const Heap<T>&) = delete;
-	Heap<T>& operator=(const Heap<T>&) = delete;
-	~Heap() = default;
-
 	void push(const T&);
 	bool empty() const;
 	const T& peek() const;

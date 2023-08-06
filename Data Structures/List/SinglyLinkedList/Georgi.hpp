@@ -7,10 +7,8 @@ private:
 		T value;
 		Node* next;
 
-		Node(const T& value, Node* next = nullptr) {
-			this->value = value;
-			this->next = next;
-		}
+		Node(const T& value, Node* next = nullptr)
+			: value(value), next(next) { }
 	};
 
 	Node* head, * tail;
@@ -68,7 +66,7 @@ template<typename T>
 void SinglyLinkedList<T>::copyFrom(const SinglyLinkedList<T>& other) {
 	Node* iter = other.head;
 
-	while (iter != nullptr) {
+	while (iter) {
 		push_back(iter->value);
 		iter = iter->next;
 	}
@@ -78,7 +76,7 @@ template<typename T>
 void SinglyLinkedList<T>::free() {
 	Node* iter = head;
 
-	while (iter != nullptr) {
+	while (iter) {
 		Node* next = iter->next;
 		delete iter;
 		iter = next;
@@ -91,44 +89,46 @@ template <typename T>
 void SinglyLinkedList<T>::push_back(const T& value) {
 	Node* newNode = new Node(value);
 
-	if (head == nullptr) {
+	if (!head) {
 		head = tail = newNode;
-		return;
 	}
-	
-	tail->next = newNode;
-	tail = tail->next;
+	else {
+		tail->next = newNode;
+		tail = tail->next;
+	}
 }
 
 template<typename T>
 void SinglyLinkedList<T>::push_front(const T& value) {
 	Node* newNode = new Node(value);
 
-	if (head == nullptr) {
+	if (!head) {
 		head = tail = newNode;
-		return;
+	} 
+	else {
+		newNode->next = head;
+		head = newNode;
 	}
-
-	newNode->next = head;
-	head = newNode;
 }
 
 template<typename T>
 void SinglyLinkedList<T>::pop_front() {
-	if (head == nullptr)
+	if (!head) {
 		throw std::length_error("List is empty");
+	}
 
 	Node* temp = head;
 	head = head->next;
 	delete temp;
 
-	if (head == nullptr)
+	if (!head) {
 		tail = nullptr;
+	}
 }
 
 template<typename T>
 void SinglyLinkedList<T>::pop_back() {
-	if (head == nullptr)
+	if (!head)
 		throw std::length_error("List is empty");
 
 	Node* prev = nullptr;
@@ -159,8 +159,9 @@ void SinglyLinkedList<T>::insert(const T& value, size_t index) {
 	Node* prev = nullptr;
 	Node* iter = head;
 	for (size_t i = 0; i < index; i++) {
-		if (iter == nullptr)
+		if (!iter) {
 			throw std::out_of_range("Invalid index");
+		}
 
 		prev = iter;
 		iter = iter->next;
@@ -168,8 +169,9 @@ void SinglyLinkedList<T>::insert(const T& value, size_t index) {
 
 	Node* newNode = new Node(value, iter);
 	prev->next = newNode;
-	if (tail == prev)
+	if (tail == prev) {
 		tail = newNode;
+	}
 }
 
 // TODO: test
@@ -184,16 +186,18 @@ void SinglyLinkedList<T>::remove(size_t index) {
 	Node* iter = head;
 
 	for (size_t i = 0; i < index; i++) {
-		if (iter->next == nullptr)
+		if (!iter->next) {
 			throw std::out_of_range("Invalid index");
+		}
 
 		prev = iter;
 		iter = iter->next;
 	}
 
 	prev->next = iter->next;
-	if (iter == tail)
+	if (iter == tail) {
 		tail = prev;
+	}
 	
 	delete iter;
 }
@@ -202,9 +206,10 @@ template<typename T>
 bool SinglyLinkedList<T>::contains(const T& value) const {
 	Node* iter = head;
 
-	while (iter != nullptr) {
-		if (iter->value == value)
+	while (iter) {
+		if (iter->value == value) {
 			return true;
+		}
 
 		iter = iter->next;
 	}
@@ -214,15 +219,17 @@ bool SinglyLinkedList<T>::contains(const T& value) const {
 
 template<typename T>
 const T& SinglyLinkedList<T>::front() const {
-	if (head == nullptr)
+	if (!head) {
 		throw std::length_error("List is empty");
+	}
 
 	return head->value;
 }
 template<typename T>
 const T& SinglyLinkedList<T>::back() const {
-	if (tail == nullptr)
+	if (!tail) {
 		throw std::length_error("List is empty");
+	}
 
 	return tail->value;
 }
@@ -231,7 +238,7 @@ template<typename T>
 void SinglyLinkedList<T>::print() const {
 	Node* iter = head;
 
-	while (iter != nullptr) {
+	while (iter) {
 		std::cout << iter->value << " ";
 		iter = iter->next;
 	}
