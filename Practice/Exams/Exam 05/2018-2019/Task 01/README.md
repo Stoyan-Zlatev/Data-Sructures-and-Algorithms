@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sda-test-5/challenges/1-140/problem

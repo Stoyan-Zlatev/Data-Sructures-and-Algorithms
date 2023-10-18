@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sda-2019-2020-test3/challenges/print-specific-level

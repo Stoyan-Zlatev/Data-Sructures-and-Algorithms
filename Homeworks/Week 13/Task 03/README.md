@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sda-hw-13-2022-1/challenges/exam-7

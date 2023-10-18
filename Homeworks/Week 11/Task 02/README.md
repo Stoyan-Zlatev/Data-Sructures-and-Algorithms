@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sda-hw-11-2022/challenges/task2-3

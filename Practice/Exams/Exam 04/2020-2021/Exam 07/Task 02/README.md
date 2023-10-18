@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sda-2020-2021-test7-8jfn4/challenges/challenge-2737

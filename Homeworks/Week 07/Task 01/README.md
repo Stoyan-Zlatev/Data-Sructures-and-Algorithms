@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sda-hw-7-2022/challenges/zoros-mask

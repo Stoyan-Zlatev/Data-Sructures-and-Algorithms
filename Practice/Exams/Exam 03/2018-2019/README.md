@@ -1,1 +1,0 @@
-https://www.hackerrank.com/contests/sdatest3/challenges
