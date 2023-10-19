@@ -7,32 +7,7 @@ struct Tournament {
 	size_t counter = 0;
 };
 
-long long binarySearch(std::vector<size_t>& arr, size_t target) {
-	size_t left = 0;
-	size_t right = arr.size() - 1;
-
-	while (left <= right) {
-		// handles the case when the sum
-		// of left + right > INT_MAX
-		size_t mid = left + (right - left) / 2;
-
-		if (arr[mid] == target)
-			return mid;
-		else if (arr[mid] > target)
-			for (size_t i = left; i <= mid; i++)
-			{
-				if (arr[i] >= target)
-					return i;
-			}
-		else
-			left = mid + 1;
-	}
-
-	return -1;
-}
-
-int task2()
-{
+int task2() {
 	int studentsCount;
 	std::cin >> studentsCount;
 	int tournametsCount;
