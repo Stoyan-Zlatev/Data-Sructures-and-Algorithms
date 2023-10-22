@@ -39,24 +39,6 @@ bool checkPossiblePartitions(size_t count, size_t partitions, size_t target)
     return true;
 }
 
-bool checkSolutionExists(size_t target, size_t count)
-{
-    for (size_t i = 0; i < count; i++)
-    {
-        size_t currentSum = 0;
-        for (size_t j = i; j < count; j++)
-        {
-            currentSum += arr[j];
-            if (currentSum == target)
-            {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
 size_t binary(size_t left, size_t right, size_t count, size_t partitions)
 {
     size_t result = left;
@@ -88,11 +70,7 @@ int main()
     {
         std::cin >> arr[i];
         sortedArr[i] = arr[i];
-    }
-
-    for (size_t i = 0; i < n; i++)
-    {
-        sum += arr[i];
+         sum += arr[i];
     }
 
     std::sort(sortedArr.begin(), sortedArr.begin() + n);
