@@ -10,10 +10,10 @@
 
 На първия ред се въвежда $S$
 
-
 ### Constraints
 
-$1 \le |S| \le 2\cdot10^7$<br />$S[i] \in $\{a - z,, A - Z, 0 - 9\}$ $
+ $1 \le |S| \le 2\cdot10^7$
+$S[i] \in $\{a -  z, A - Z, 0 - 9\}$ $
 
 
 ### Output format
