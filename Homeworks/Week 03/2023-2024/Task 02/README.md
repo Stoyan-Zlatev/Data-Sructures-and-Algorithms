@@ -14,10 +14,10 @@
 
 
 ### Constraints
-$1 \le n \le 10^6$
-$0 \le t_i \le 10^9$
-$1 \le q \le 10^5$
-$0 \le a,b \le 10^9$
+$1 \le n \le 10^6$<br>
+$0 \le t_i \le 10^9$<br>
+$1 \le q \le 10^5$<br>
+$0 \le a,b \le 10^9$<br>
 
 В 50% от тестовете $0 \le a,b \le 10^3$
 
