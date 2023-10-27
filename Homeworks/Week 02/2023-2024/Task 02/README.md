@@ -16,7 +16,8 @@
 ### Constraints
 
 
-$1 \le N \le 10^7$<br>
+$1 \le N \le 10^7$  
+
 $-10^5 \le arr_i \le 10^5$
 
 

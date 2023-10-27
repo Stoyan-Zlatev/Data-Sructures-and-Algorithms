@@ -17,8 +17,10 @@
 
 ### Constraints
 
-$1 \le N \le 10^5$<br>
-$1 \le s_i \le 10^6$<br>
+$1 \le N \le 10^5$
+
+$1 \le s_i \le 10^6$
+
 $1 \le T \le min(N/2,100)$
 
 
