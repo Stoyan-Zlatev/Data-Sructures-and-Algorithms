@@ -14,9 +14,9 @@
 ### Constraints
 
 
-$1 \le N \le 10^6$
-$1 \le T \le 2^{31} - 2$
-$1 \le D \le 10^9 - 1$
+$1 \le N \le 10^6$<br>
+$1 \le T \le 2^{31} - 2$<br>
+$1 \le D \le 10^9 - 1$<br>
 
 
 ### Output format
