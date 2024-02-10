@@ -1,4 +1,4 @@
-# Homework 04: Входни задачи - - [Contest](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges>)
+# Homework 04: Свързан списъk - [Contest](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges>)
 
 ---
 

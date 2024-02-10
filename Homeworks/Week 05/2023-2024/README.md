@@ -1,4 +1,4 @@
-# NNNNNNN - [Contest](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges>)
+# Homework 05: Стек и опашка - [Contest](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges>)
 
 ---
 

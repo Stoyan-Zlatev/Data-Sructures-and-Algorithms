@@ -1,4 +1,4 @@
-# Homework 03: Входни задачи - [Contest](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges>)
+# Homework 03: Алгоритми за търсене - [Contest](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges>)
 
 ---
 

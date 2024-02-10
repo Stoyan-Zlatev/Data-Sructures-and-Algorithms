@@ -1,4 +1,4 @@
-# Homework 02: Входни задачи - [Contest](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges>)
+# Homework 02: Алгоритми за сортиране - [Contest](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges>)
 
 ---
 
