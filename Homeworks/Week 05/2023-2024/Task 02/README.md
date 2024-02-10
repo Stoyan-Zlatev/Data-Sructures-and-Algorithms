@@ -16,6 +16,7 @@
 ### Constraints
 
 $N \le 10^6$
+
 $D \le 15 000$
  
 

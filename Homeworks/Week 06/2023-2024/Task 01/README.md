@@ -24,6 +24,7 @@
 ### Constraints
 
 $ 1 \le N \le 10^6$
+
 $ 1 \le A \le 10^8$
 
 ### Output format

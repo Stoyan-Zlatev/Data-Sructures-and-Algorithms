@@ -27,6 +27,7 @@
 ### Constraints
 
 $0 \le Q \le 10^5$
+
 $1 \le P_i \le 10^9$
 
 

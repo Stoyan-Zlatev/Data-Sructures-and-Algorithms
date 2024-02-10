@@ -22,7 +22,9 @@ $right$ съответства на индекса на десния насле�
 ### Constraints
 
 $1\le N \le 10^6$
+
 $-1\le left \le N-1$
+
 $-1\le right \le N-1$
 
 ### Output format

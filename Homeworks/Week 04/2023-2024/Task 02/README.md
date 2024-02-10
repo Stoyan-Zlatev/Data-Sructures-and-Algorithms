@@ -38,8 +38,10 @@ Each of the next $n$ lines contains an integer, the $data$ value for each of the
 
 ### Constraints
 
-$1 \le t \le10$
+$1 \le t \le 10$
+
 $1 \le n \le 1000$
+
 $1 \le list[i] \le 1000$ 
 
 ### Sample Input

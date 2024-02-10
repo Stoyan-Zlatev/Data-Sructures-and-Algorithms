@@ -14,7 +14,9 @@
 ### Constraints
 
 $1 \le N \le 10^5$
+
 $1 \le M \le N$
+
 $1 \le num \le N$
 
 ### Output format

@@ -44,7 +44,9 @@ The last line contains an integer $posiiton$.
 ### Constraints
 
 $1\le n \le 1000$
+
 $1\le SinglyLinkedListNode[i].data \le 1000$
+
 $0\le position \le$
 
 

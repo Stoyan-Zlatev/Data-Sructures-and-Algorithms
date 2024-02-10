@@ -24,8 +24,11 @@ $right$ съответства на индекса на десния насле�
 ### Constraints
 
 $1\le N \le 4*10^6$
+
 $-10^5\le val \le 10^5$
+
 $-1\le left \le N-1$
+
 $-1\le right\le N-1$
 
 ### Output format

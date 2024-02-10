@@ -46,7 +46,9 @@ The next $m$ lines contain an integer each, the elements of the second linked li
 ### Constraints
 
 * $1\le t \le 10$
+
 * $1 \le n,m \le 1000$
+
 * $1 \le list[i] \le 1000 ,$ $where$ $list[i]$ $is$ $the$ $i^{th}$ $element$ $in$ $the$ $list$
 
 
