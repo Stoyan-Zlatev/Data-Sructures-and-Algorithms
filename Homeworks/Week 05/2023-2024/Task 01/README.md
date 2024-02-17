@@ -1,4 +1,4 @@
-# Task: Bridge Battle (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges/bridge-battle-1>)
+#  Bridge Battle (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges/bridge-battle-1>)
 
 
 ### Statement:

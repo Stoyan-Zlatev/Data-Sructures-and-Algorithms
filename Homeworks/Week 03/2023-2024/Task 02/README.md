@@ -1,4 +1,4 @@
-# Task: Оценки (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges/challenge-2675>)
+#  Оценки (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges/challenge-2675>)
 
 
 ### Statement:

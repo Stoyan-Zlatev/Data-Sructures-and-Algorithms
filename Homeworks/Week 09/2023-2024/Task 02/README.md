@@ -1,4 +1,4 @@
-# Task: Дълъг подниз (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-9-2023/challenges/longest-match>)
+# Дълъг подниз (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-9-2023/challenges/longest-match>)
 
 
 ### Statement:
@@ -8,14 +8,14 @@
 
 ### Input format
 
-На първия ред се въвежда $MISSING$ - първия низ.
+На първия ред се въвежда $s1$ - първия низ.
 
-На втория ред се въвежда $MISSING$ - втория низ.
+На втория ред се въвежда $s2$ - втория низ.
 
 
 ### Constraints
 
-
+$1 \le |s1|, |s2| \le 10^5$
 
 ### Output format
 

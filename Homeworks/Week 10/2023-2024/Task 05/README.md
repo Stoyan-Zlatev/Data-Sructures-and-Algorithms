@@ -1,4 +1,4 @@
-# Task: Бонус: Лего от Али експрес (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-10-2023/challenges/lego-from-ali-express>)
+# Бонус: Лего от Али експрес (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-10-2023/challenges/lego-from-ali-express>)
 
 
 ### Statement:
@@ -14,22 +14,24 @@
 
 ### Input format
 
-На първия ред се въвеждат $MISSING$ и $MISSING$
+На първия ред се въвеждат $N$ и $M$
 
-На следващите $MISSING$ реда се дават по три числа - първите две са номерата на градовете, между които има път, a трето е дължината на пътя (1 или 2).
+На следващите $M$ реда се дават по три числа - първите две са номерата на градовете, между които има път, a трето е дължината на пътя (1 или 2).
 
-На последния ред се въвеждат 2 числа $MISSING$ и $MISSING$.
+На последния ред се въвеждат 2 числа $startIndex$ и $endIndex$.
 
 
 ### Constraints
 
+$1 \le N,M \le 10^6$
 
-Номерата на върховете са между  и 
+Номерата на върховете са между $0 \; и \; N-1$
 
+$0 \le startIndex,endIndex \le 10^6$
 
 ### Output format
 
-На един ред се извежда търсеният отговор - дължината на най-краткия път между двата $MISSING$ и $MISSING$.
+На един ред се извежда търсеният отговор - дължината на най-краткия път между двата $startIndex$ и $endIndex$.
 
 
 ### Samples

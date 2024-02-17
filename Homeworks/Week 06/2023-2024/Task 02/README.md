@@ -1,4 +1,4 @@
-# Task: Час по рисуване (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-6-2023/challenges/task3score>)
+# Час по рисуване (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-6-2023/challenges/task3score>)
 
 
 ### Statement:

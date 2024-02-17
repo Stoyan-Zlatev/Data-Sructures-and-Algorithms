@@ -1,4 +1,4 @@
-# Task: Контролно 2 по СДА (Medium) - [HackerRank](https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/exam-5-1)
+#  Контролно 2 по СДА (Medium) - [HackerRank](https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/exam-5-1)
 
 
 ### Statement:

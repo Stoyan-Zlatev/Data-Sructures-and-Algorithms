@@ -1,4 +1,4 @@
-# Task: Добрите момчета от залите (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges/challenge-3089>)
+# Добрите момчета от залите (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges/challenge-3089>)
 
 
 ### Statement:

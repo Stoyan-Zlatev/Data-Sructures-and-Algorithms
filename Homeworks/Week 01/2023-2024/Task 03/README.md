@@ -1,4 +1,4 @@
-# Task: Кастинг за "Игри на волята" (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2023/challenges/-6-3>)
+# Кастинг за "Игри на волята" (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2023/challenges/-6-3>)
 
 
 ### Statement:

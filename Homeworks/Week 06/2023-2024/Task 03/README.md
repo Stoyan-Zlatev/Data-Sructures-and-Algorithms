@@ -1,4 +1,4 @@
-# Task: Дълъг път (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-6-2023/challenges/task2sum>)
+# Дълъг път (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-6-2023/challenges/task2sum>)
 
 
 ### Statement:

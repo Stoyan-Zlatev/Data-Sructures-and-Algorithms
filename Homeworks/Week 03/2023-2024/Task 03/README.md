@@ -1,4 +1,4 @@
-# Task: CEO на стартъп (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges/challenge-3670>)
+#  CEO на стартъп (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges/challenge-3670>)
 
 
 ### Statement:

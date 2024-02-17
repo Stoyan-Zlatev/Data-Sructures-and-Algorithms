@@ -1,4 +1,4 @@
-# Task: Въпроси (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-12-2023/challenges/roads-5>)
+# Въпроси (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-12-2023/challenges/roads-5>)
 
 
 ### Statement:

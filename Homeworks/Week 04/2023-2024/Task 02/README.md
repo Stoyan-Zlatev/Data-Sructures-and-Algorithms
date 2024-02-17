@@ -1,4 +1,4 @@
-# Task: Delete duplicate-value nodes from a sorted linked list (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/delete-duplicate-value-nodes-from-a-sorted-linked-list>)
+# Delete duplicate-value nodes from a sorted linked list (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/delete-duplicate-value-nodes-from-a-sorted-linked-list>)
 
 
 ### Statement:

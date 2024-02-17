@@ -1,4 +1,4 @@
-# Task: Клюкарстване (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-9-2023/challenges/challenge-4437>)
+# Клюкарстване (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-9-2023/challenges/challenge-4437>)
 
 
 ### Statement:
@@ -15,8 +15,10 @@
 
 ### Constraints
 
+$1 \le N \le 10^5 $
 
- INT_MAX
+$1 \le arr[i] \le  INT_MAX$
+
 
 ### Output format
 

@@ -1,4 +1,4 @@
-# Task: Изпит по СЕМ (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2023/challenges/challenge-4220>)
+# Изпит по СЕМ (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2023/challenges/challenge-4220>)
 
 
 ### Statement:

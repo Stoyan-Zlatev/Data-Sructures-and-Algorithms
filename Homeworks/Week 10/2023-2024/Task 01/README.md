@@ -1,4 +1,4 @@
-# Task: Горски Пожари (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-10-2023/challenges/challenge-2753>)
+# Горски Пожари (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-10-2023/challenges/challenge-2753>)
 
 
 ### Statement:
@@ -10,16 +10,16 @@
 
 ### Input format
 
-На първия ред прочитате цяло число $MISSING$.
+На първия ред прочитате цяло число $N$.
 
-Следва гората, представена като квадратна матрица със страна $MISSING$. 
+Следва гората, представена като квадратна матрица със страна $N$. 
 
 Гарантирано е, че в матрицата има поне 1 клетка с ```1```.
 
 
 ### Constraints
 
-
+$1 \le 4000$
 
 ### Output format
 

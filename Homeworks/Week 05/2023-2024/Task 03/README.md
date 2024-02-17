@@ -1,4 +1,4 @@
-# Task: Игри на волята (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges/challenge-3105>)
+#  Игри на волята (Hard) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges/challenge-3105>)
 
 
 ### Statement:

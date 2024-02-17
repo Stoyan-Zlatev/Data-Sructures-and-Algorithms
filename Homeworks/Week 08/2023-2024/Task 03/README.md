@@ -1,4 +1,4 @@
-# Task: Шофьор на маршрутка (Medium) - [HackerRank](https://www.hackerrank.com/contests/sda-hw-8-2023/challenges/challenge-4388)
+# Шофьор на маршрутка (Medium) - [HackerRank](https://www.hackerrank.com/contests/sda-hw-8-2023/challenges/challenge-4388)
 
 ### Statement:
 

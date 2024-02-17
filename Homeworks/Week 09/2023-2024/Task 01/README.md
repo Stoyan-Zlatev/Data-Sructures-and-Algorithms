@@ -1,4 +1,4 @@
-# Task: Срещания на низ (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-9-2023/challenges/substring-frequency-1>)
+# Срещания на низ (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-9-2023/challenges/substring-frequency-1>)
 
 
 ### Statement:

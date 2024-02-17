@@ -1,4 +1,4 @@
-# Task: Кръстова вада (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges/krastova-vada>)
+#  Кръстова вада (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-5-2023/challenges/krastova-vada>)
 
 
 ### Statement:

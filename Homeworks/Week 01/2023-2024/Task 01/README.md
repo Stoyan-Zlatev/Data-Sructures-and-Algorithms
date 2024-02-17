@@ -1,4 +1,4 @@
-# Task: Уроци по английски (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2023/challenges/challenge-3068>)
+# Уроци по английски (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-1-2023/challenges/challenge-3068>)
 
 
 ### Statement:

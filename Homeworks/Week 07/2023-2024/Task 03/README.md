@@ -1,4 +1,4 @@
-# Task: Minimum xor (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-7-2023/challenges/minimum-xor-3>)
+#  Minimum xor (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-7-2023/challenges/minimum-xor-3>)
 
 
 ### Statement:

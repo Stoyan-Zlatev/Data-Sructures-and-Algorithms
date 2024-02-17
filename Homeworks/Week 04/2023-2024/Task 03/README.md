@@ -1,4 +1,4 @@
-# Task: Insert a node at a specific position in a linked list (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/insert-a-node-at-a-specific-position-in-a-linked-list>)
+# Insert a node at a specific position in a linked list (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/insert-a-node-at-a-specific-position-in-a-linked-list>)
 
 
 ### Statement:

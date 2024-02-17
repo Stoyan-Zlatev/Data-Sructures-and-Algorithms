@@ -1,4 +1,4 @@
-# Task: Отбор за милиони (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges/coachsort>)
+# Отбор за милиони (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges/coachsort>)
 
 
 ### Statement:

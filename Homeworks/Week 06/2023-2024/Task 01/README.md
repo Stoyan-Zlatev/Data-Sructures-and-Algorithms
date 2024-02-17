@@ -1,4 +1,4 @@
-# Task: Скиорски кошмар (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-6-2023/challenges/vertical-sums>)
+#  Скиорски кошмар (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-6-2023/challenges/vertical-sums>)
 
 
 ### Statement:

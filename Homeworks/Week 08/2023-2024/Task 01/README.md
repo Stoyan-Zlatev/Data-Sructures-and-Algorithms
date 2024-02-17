@@ -1,4 +1,4 @@
-# Task: Най-близки забележителности (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-8-2023/challenges/--164>)
+#  Най-близки забележителности (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-8-2023/challenges/--164>)
 
 
 ### Statement:

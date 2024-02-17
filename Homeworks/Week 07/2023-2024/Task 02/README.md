@@ -1,4 +1,4 @@
-# Task: Подредица (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-7-2023/challenges/challenge-4337>)
+# Подредица (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-7-2023/challenges/challenge-4337>)
 
 
 ### Statement:

@@ -1,4 +1,4 @@
-# Task: Merge two sorted linked lists (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/merge-two-sorted-linked-lists>)
+# Merge two sorted linked lists (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/merge-two-sorted-linked-lists>)
 
 
 ### Statement:

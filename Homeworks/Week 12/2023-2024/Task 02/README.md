@@ -1,4 +1,4 @@
-# Task: Строене на пътища (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-12-2023/challenges/2-146>)
+# Строене на пътища (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-12-2023/challenges/2-146>)
 
 
 ### Statement:
@@ -20,13 +20,20 @@
 
 ### Constraints
 
+$1 \le N,M \le 2 \times 10^5$
+
+$1 \le a_i, b_i \le N$
+
+$1 \le C_{1i}\lt 10^{17}$
+
+$-10^{17} \lt C_{2i} \lt 10^{17}$
 
 
 *Aко има повече от едно решение, можете да отпечатате, което и да е от тях*
 
 ### Output format
 
-Отпечатайте $MISSING$ реда, съдържащи индексите на пътищата които сте избрали да бъдат построени.
+Отпечатайте $N-1$ реда, съдържащи индексите на пътищата които сте избрали да бъдат построени.
 
 
 ### Samples

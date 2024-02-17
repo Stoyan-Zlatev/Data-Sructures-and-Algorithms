@@ -1,4 +1,4 @@
-# Task: Ресторант (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges/subarray123>)
+# Ресторант (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-2-2023/challenges/subarray123>)
 
 
 ### Statement:

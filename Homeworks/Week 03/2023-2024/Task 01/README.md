@@ -1,4 +1,4 @@
-# Task: Проекти (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges/-8>)
+# Проекти (Easy) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-3-2023/challenges/-8>)
 
 
 ### Statement:

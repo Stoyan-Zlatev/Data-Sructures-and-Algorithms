@@ -1,4 +1,4 @@
-# Task: Кеш памет (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/cache-8>)
+#  Кеш памет (Medium) - [HackerRank](<https://www.hackerrank.com/contests/sda-hw-4-2023/challenges/cache-8>)
 
 
 ### Statement:
