@@ -1,39 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
-#include <cstring>
+#include <algorithm>
+using namespace std;
 
-int task1()
-{
-	unsigned short listsCount;
-	std::cin >> listsCount;
+char arr[1000000 + 1];
 
-	char** lists = new char* [listsCount];
-
-	for (size_t i = 0; i < listsCount; i++)
-	{
-		unsigned int currentListLength;
-		std::cin >> currentListLength;
-		lists[i] = new char[currentListLength + 1];
-
-		std::cin >> lists[i];
-	}
-
-	for (size_t i = 0; i < listsCount; i++)
-	{
-		unsigned int length = strlen(lists[i]);
-		unsigned int count = 0;
-		for (size_t j = 0; j < length - 1; j++) {
-			if (lists[i][j] == lists[i][j + 1])
-				count++;
-		}
-
-		std::cout << count << std::endl;
-	}
-
-
-	for (size_t i = 0; i < listsCount; i++)
-		delete[] lists[i];
-
-	delete[] lists;
-
-	return 0;
+int main() {
+    size_t count;
+    std::cin >> count;
+    for(size_t i = 0; i < count; i++) {
+        size_t length;
+        std::cin >> length >> arr;
+        
+        size_t result = 0;
+        for(size_t i = 1; i < length; i++) {
+            if(arr[i - 1] == arr[i]) {
+                result++;
+            }
+        }
+        
+        std::cout << result << std::endl;
+    } 
 }
