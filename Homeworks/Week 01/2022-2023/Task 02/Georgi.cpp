@@ -1,35 +1,27 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
+#include <algorithm>
+#include <limits.h>
+using namespace std;
 
-int task2(){
-	unsigned int daysCount;
-	std::cin >> daysCount;
-	unsigned int* prices = new unsigned int[daysCount];
+size_t prices[100000];
 
-	for (size_t i = 0; i < daysCount; i++)
-		std::cin >> prices[i];
-
-	daysCount--;
-	size_t profit = 0;
-	for (size_t i = 0; i < daysCount; i++)
-	{
-		while (i < daysCount && prices[i] > prices[i + 1])
-			i++;
-
-		unsigned int min = prices[i];
-
-		while (i < daysCount && prices[i] < prices[i + 1])
-			i++;
-
-		unsigned max = prices[i];
-		profit += max - min;
-
-		if (i == daysCount)
-			break;
-	}
-
-	std::cout << profit;
-
-	delete[] prices;
-
-	return 0;
+int main() {
+    size_t count;
+    std::cin >> count;
+    
+    for(size_t i = 0; i < count; i++) {
+        std::cin >> prices[i];
+    }
+    
+    size_t win = 0;
+    for(size_t i = 1; i < count; i++) {
+        if(prices[i] > prices[i - 1]) {
+            win += (prices[i] - prices[i - 1]);
+        }
+    }
+    
+    std::cout << win;
 }
