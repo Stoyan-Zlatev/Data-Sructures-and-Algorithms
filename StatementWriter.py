@@ -50,11 +50,19 @@ class StatementWriter:
     def _login(self, email, password):
         try:
             self._driver.get("https://www.hackerrank.com/auth/login")
-            self._find_element_secure(By.LINK_TEXT, "Log in").click()
-            self._find_element_secure(By.ID, "input-1").send_keys(email)
-            self._find_element_secure(By.ID, "input-2").send_keys(password)
-            self._find_element_secure(
-                By.CSS_SELECTOR, '#tab-1-content-1 > div.login-form.auth-form.theme-m > form > div.form-item.clearfix > button').click()
+            
+            # New login screen
+            self._find_element_secure(By.CSS_SELECTOR,"input[name='username']").send_keys(email)
+            self._find_element_secure(By.CSS_SELECTOR,"input[name='password']").send_keys(password)
+            self._find_element_secure(By.CSS_SELECTOR,"button[type='submit']").click()
+            
+            # Old login screen
+            #self._find_element_secure(By.LINK_TEXT, "Log in").click()
+            #self._find_element_secure(By.ID, "input-1").send_keys(email)
+            #self._find_element_secure(By.ID, "input-2").send_keys(password)
+            #self._find_element_secure(
+            #    By.CSS_SELECTOR, '#tab-1-content-1 > div.login-form.auth-form.theme-m > form > div.form-item.clearfix > button').click()
+        
         except Exception:
             print("There was some error while logging in.")
             print(sys.exc_info()[0])
@@ -105,9 +113,9 @@ class StatementWriter:
     def create_task_folder(self, url, save_path):
 
         contest = url
-        if re.match(r'^https?://(www)?.hackerrank.com/contests/(.*?)/challenges/?$', url):
-            contest = re.sub(r'https://www.hackerrank.com/contests/(.*?)/challenges.*',
-                         r'https://www.hackerrank.com/\1', url)
+        if re.match(r'^https?://(www\.)?hackerrank.com/contests/(.*?)/challenges/?$', url):
+            contest = re.sub(r'https://(www\.)?hackerrank.com/contests/(.*?)/challenges.*',
+                         r'https://www.hackerrank.com/\2', url)
             
         print("Opened contest!")
         self._driver.get(contest)
@@ -208,9 +216,9 @@ class StatementWriter:
         for readme in readmes:
             with open(readme, "r", encoding="utf-8") as f:
                 content = f.read().strip()
-                if re.match(r'^https?://(www)?.hackerrank.com/contests/(.*?)/challenges/(\S)+$', content):
+                if re.match(r'^https?://(www\.)?hackerrank.com/contests/(.*?)/challenges/(\S)+$', content):
                     result.append(("task", readme, content.strip()))
-                if (re.match(r'^https?://(www)?.hackerrank.com/(\S)+$', content) and re.match(r'^https?://(www)?.hackerrank.com/[^/]+/?$', content) ) or re.match(r'^https?://(www)?.hackerrank.com/contests/(.*?)/challenges/?$', content):
+                if (re.match(r'^https?://(www\.)?hackerrank.com/(\S)+$', content) and re.match(r'^https?://(www\.)?hackerrank.com/[^/]+/?$', content) ) or re.match(r'^https?://(www\.)?hackerrank.com/contests/(.*?)/challenges/?$', content):
                     result.append(("contest", readme, content.strip()))
         return result
 
